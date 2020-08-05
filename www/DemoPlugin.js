@@ -7,3 +7,7 @@ exports.coolMethod = function (arg0, success, error) {
 module.exports.add = function (arg0, success, error) {
     exec(success, error, 'DemoPlugin', 'add', [arg0]);
 };
+
+module.exports.getUserData = function (success, error) {
+    exec(success, error, 'DemoPlugin', 'getUserData', []);
+};

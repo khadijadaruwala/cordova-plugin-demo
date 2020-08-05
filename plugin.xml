@@ -12,8 +12,50 @@
                 <param name="ios-package" value="DemoPlugin" />
             </feature>
         </config-file>
-        <!-- <source-file src="src/ios/DemoPlugin.m" /> -->
         <source-file src="src/ios/DemoPlugin.swift" />
+        <!-- Controllers -->
+        <source-file src="src/ios/ViewController.swift" />
 
+        <!-- View -->
+        <resource-file src="src/ios/Main.storyboard"/>
+
+        <!-- Helper Files -->
+        <source-file src="src/ios/Extensions.swift" />
+
+        <!-- Resourses -->
+        <!-- Uncomment the next line to use images in xcassets -->
+        <!-- <resource-file src="src/ios/Assets.xcassets"/> -->
+        <resource-file src="src/ios/Montserrat-Medium.ttf"/>
+        <resource-file src="src/ios/Montserrat-Regular.ttf"/>
+
+        <!-- Add Frameworks in Build Settings using this code -->
+        <!-- <framework src="src/ios/YOUR_FRAMEWORK_NAME.framework" embed="false" custom="true" />
+        <framework src="Accelerate.framework" embed="false" />
+        <framework src="libstdc++.dylib" />
+        <framework src="libz.dylib" /> -->
+
+        <!-- Info plist configs -->
+        <!-- Asking for camera access in info.plist -->
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>We measure your health data by using the camera and flash.</string>
+        </config-file>
+
+        <!-- Adding font in the info.plist -->
+        <config-file target="*-Info.plist" parent="UIAppFonts">
+            <array>
+                <string>Montserrat-Medium.ttf</string>
+                <string>Montserrat-Regular.ttf</string>
+            </array>
+        </config-file>
+
+        <!-- Use thid to add pods to your project Pod file  -->
+        <!-- <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="Alamofire"/>
+            </pods>
+        </podspec> -->
     </platform>
 </plugin>
